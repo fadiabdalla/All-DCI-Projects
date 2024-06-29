@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message delivered</title>
+    <link rel="stylesheet" href="/message_confirmation.css">
+</head>
+<body>
+<div class="container">
+    <h2>Message delivered!</h2>
+
+    <p>Thank you for your Message <span th:text="${message.senderName} + '!'" /></p>
+    <p>We will reach you shortly on your email <span th:text="'(' + ${message.senderEmail} + ').'" /></p>
+
+    <h3>Copy of your message:</h3>
+    <p>Product: <span th:text="${message.products}" /></p>
+    <p>Guarantee: <span th:text="${message.guarantee}" /></p>
+    <p>Message:</p>
+    <p><span th:text="${message.messageBody}" /></p>
+</div>
+</body>
+</html>

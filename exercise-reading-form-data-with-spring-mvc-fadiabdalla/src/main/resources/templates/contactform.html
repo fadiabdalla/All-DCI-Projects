@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+<div class="container">
+    <h2>Contact us</h2>
+
+    <form th:action="@{/send}" th:object="${msg}" method="POST">
+        <label for="Name">Name</label>
+        <input id="Name" type="text" name="senderName">
+        <br>
+        <label for="Email">Email</label>
+        <input id="Email" type="text" name="senderEmail">
+        <br>
+        <h5>Product</h5>
+        <select th:field="*{products}">
+            <option th:value="Laptop">Laptop</option>
+            <option th:value="TV">TV</option>
+            <option th:value="Phone">Phone</option>
+            <option th:value="Tablet">Tablet</option>
+        </select>
+        <br>
+        <h5>Guarantee</h5>
+        <input type="checkbox" th:field="*{guarantee}" th:value="Care">Care</input>
+        <input type="checkbox" th:field="*{guarantee}" th:value="CarePlus">Care Plus</input>
+        <input type="checkbox" th:field="*{guarantee}" th:value="Premium">Premium</input>
+        <br>
+        <br>
+        <label for="message">Describe Problem</label>
+        <br>
+        <textarea id="message" name="messageBody" th:field="*{messageBody}"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
