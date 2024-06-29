@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <style>
+        .error{color: red}
+    </style>
+</head>
+<body>
+<form th:action="@{/add-product}" th:object="${product}" method="POST">
+    Product name: <input type="text" th:field="*{name}" />
+   <br><br>
+    Availability:
+    <input type="radio" th:field="*{availability}" th:value="Available">Available</input>
+    <input type="radio" th:field="*{availability}" th:value="'Not Available'">Not Available</input>
+
+    <br><br>
+    Quantity: <input type="number" th:field="*{quantity}" />
+    <span th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}" class="error"></span>
+    <br><br>
+    Product description:  <textarea rows="15" cols="30" th:field="*{description}"></textarea>
+    <br><br>
+    <input type="submit" value="Add" />
+
+</form>
+</body>
+</html>
