@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Confirmation</title>
+</head>
+<body>
+<h2> User Confirmation</h2>
+
+Confirmed user:
+<br>
+<span th:text="' Name: ' + ${user.fullName}" />
+<br>
+<span th:text="'Gender: ' + ${user.gender}" />
+<br>
+<span th:text="' Age: ' + ${user.age}" />
+<br>
+<br>
+Movie Type:
+<span th:text="${user.movie}" />
+<br><br>
+Movie quality:
+<span th:text="${user.movieQuality}" />
+<br><br>
+Cinema location:
+<span th:text="${user.cinema}" />
+
+
+
+</body>
+</html>

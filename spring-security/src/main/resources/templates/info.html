@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/index">Home Page</a>
+        <a href="/information">Information</a>
+        <a href="/register">Register</a>
+    </nav>
+</header>
+
+<h1>Information<h1/>
+    <div>
+        About us....
+        <div/>
+
+
+
+<form th:action="@{/logout}" method="POST">
+
+    <button type="submit">Logout</button>
+    <form/>
+</body>
+</html>

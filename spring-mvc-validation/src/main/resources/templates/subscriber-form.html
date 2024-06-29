@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Form</title>
+    <style>
+        .error{color: red}
+    </style>
+</head>
+<body>
+<form th:action="@{/process}" th:object="${subscriber}" method="POST">
+
+    Full name: <input type="text" th:field="*{fullName}" />
+    <br><br>
+    Address: <input type="text" th:field="*{address}" />
+
+    <!-- Error message -->
+    <span th:if="${#fields.hasErrors('address')}"
+    th:errors="*{address}"
+          class="error"></span>
+    <br><br>
+
+    Age: <input type="text" th:field="*{age}" />
+
+    <!-- Error message -->
+    <span th:if="${#fields.hasErrors('age')}"
+                th:errors="*{age}"
+                class="error"></span>
+
+    <br><br>
+
+    Postal Code: <input type="text" th:field="*{postalCode}" />
+
+    <!-- Error message -->
+    <span th:if="${#fields.hasErrors('postalCode')}"
+          th:errors="*{postalCode}"
+          class="error"></span>
+    <br>
+
+    <input type="submit" value="Submit" />
+
+
+</form>
+</body>
+</html>

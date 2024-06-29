@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+</head>
+<body>
+
+<h2> User Registration Form </h2>
+<form th:action="@{/processInfo}" th:object="${user}" method="POST">
+
+    Full Name : <input type="text" th:field="*{fullName}"/>
+    <br> <br>
+ Gender:  <input type="text" th:field="*{gender}"/>
+    <br> <br>
+
+    Age:  <input type="text" th:field="*{age}"/>
+    <br> <br>
+
+    Movie Type:
+    <select th:field="*{movie}">
+        <option th:value="Comedy"> Comedy </option>
+        <option th:value="Thriller"> Thriller </option>
+        <option th:value="Romance"> Romance </option>
+        <option th:value="Drama"> Drama </option>
+        <option th:value="Action"> Action </option>
+
+    </select>
+    <br><br>
+    Cinema location:
+    <input type="radio" th:field="*{cinema}" th:value="Berlin">Berlin</input>
+    <input type="radio" th:field="*{cinema}" th:value="Bremen">Bremen</input>
+    <input type="radio" th:field="*{cinema}" th:value="Hamburg">Hamburg</input>
+    <br><br>
+
+    Choose movies based on quality:
+    <input type="checkbox" th:field="*{movieQuality}" th:value="SD">SD</input>
+    <input type="checkbox" th:field="*{movieQuality}" th:value="HD">HD</input>
+    <input type="checkbox" th:field="*{movieQuality}" th:value="UHD">UHD</input>
+    <br><br>
+    <input type="submit" value="Submit" />
+
+</form>
+
+</body>
+</html>

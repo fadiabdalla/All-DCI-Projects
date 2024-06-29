@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+<body style="margin:40px">
+My Amazing Login page
+<form th:action="@{/login}" method="POST">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <button>Submit</button>
+    <p th:if="${param.error}">Wrong username or password</p>
+    <p th:if="${param.logout}">You singed out</p>
+
+</form>
+</body>
+</html>
