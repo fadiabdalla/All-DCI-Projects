@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application</title>
+    <style>
+        .error{color: red}
+    </style>
+</head>
+<body>
+<form th:action="@{/process}" th:object="${applicant}" method="POST">
+
+    Name : <input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span>
+    <br><br>
+    Email: <input type="text" th:field="*{email}" />
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
+    <br><br>
+    Address: <input type="text" th:field="*{address}" />
+    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error"></span>
+    <br><br>
+    Phone Number: <input type="text" th:field="*{phoneNumber}" />
+    <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error"></span>
+    <br><br>
+    Job Position : <select th:field="*{jobPosition}">
+    <option th:value="'Software Engineer'">Software Engineer</option>
+    <option th:value="'Web Developer'">Web Developer</option>
+    <option th:value="'Data Scientist'">Data Scientist</option>
+</select>
+    <span th:if="${#fields.hasErrors('jobPosition')}" th:errors="*{jobPosition}" class="error"></span>
+    <br><br>
+    Job Location:
+    <input type="radio" th:field="*{jobLocation}" th:value="Bremen">Bremen</input>
+    <input type="radio" th:field="*{jobLocation}" th:value="Remotely">Remotely</input>
+    <span th:if="${#fields.hasErrors('jobLocation')}" th:errors="*{jobLocation}" class="error"></span>
+    <br><br>
+    Cover Letter:
+    <br><br>
+    <textarea rows="15" cols="30" th:field="*{coverLetter}"></textarea>
+    <span th:if="${#fields.hasErrors('coverLetter')}" th:errors="*{coverLetter}" class="error"></span>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Application was submitted</title>
+</head>
+<body>
+Confirmed apllication:
+<br><br>
+Name: <span th:text="${applicant.name}"/>
+<br>
+Email: <span th:text="${applicant.email}"/>
+<br>
+Address: <span th:text="${applicant.address}"/>
+<br>
+Phone number: <span th:text="${applicant.phoneNumber}"/>
+<br>
+Job position: <span th:text="${applicant.jobPosition}"/>
+<br>
+Location: <span th:text="${applicant.jobLocation}"/>
+<br>
+Cover Letter:
+<br>
+<span th:text="${applicant.coverLetter}"/>
+
+</body>
+</html>
