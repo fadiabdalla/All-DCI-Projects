@@ -1,0 +1,83 @@
+* {
+    box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+}
+body {
+    background-color : rgb(217, 215, 215);
+}
+nav {
+    display : flex;
+    align-items : center;
+    justify-content : left;
+    background-color : #414141;
+    color : #fff;
+    padding : 10px 20px;
+}
+.logo img {
+    width : 70px;
+    height : 70px;
+}
+
+nav li {
+    margin : 0 10px;
+}
+nav a {
+    color : #fff;
+    text-decoration : none;
+    padding : 10px;
+    border-radius : 20px;
+}
+nav a:hover {
+    background-color : #71cb8c;
+    color : rgb(41, 97, 59);
+}
+h1 {
+    width : 300px;
+    padding : 15px;
+    margin : auto;
+    margin-top : 30px;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color : rgb(255, 255, 255);
+    text-transform : uppercase;
+    text-shadow : 2px 2px 5px;
+    border : #2e302f solid 1px;
+    border-radius : 20px;
+    background-color : #3c3d3c;
+}
+.info {
+    display : flex;
+    flex-direction : column;
+    width : fit-content;
+    margin-top : 5%;
+    margin-left : 30px;
+    margin-bottom : 3%;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size : 18px;
+}
+.name {
+    margin-bottom : 20px;
+}
+.email {
+    margin-bottom : 30px;
+}
+.birthDate {
+    margin-bottom : 30px;
+}
+h5 {
+    font-size : 18px;
+    padding-bottom : 10px;
+}
+.gender {
+    display : flex;
+    justify-content : space-between;
+    margin-bottom : 30px;
+}
+.fileUpload {
+    margin-bottom : 30px;
+}
+.quistion {
+    display : flex;
+    flex-direction : column;
+    margin-bottom : 30px;
+}

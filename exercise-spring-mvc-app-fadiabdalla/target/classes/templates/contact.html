@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" th:href="./contactStyling.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./logo.png" alt="Logo">
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <h1>Frag mal uns!</h1>
+
+        <section class="info" th:action="@{/processMessage}" method="POST">
+            <div class="name">
+                <label for="Name"> Name *</label>
+                <input id="Name" type="text" required>
+            </div>
+            <div class="email">
+                <label for="Email">Email *</label>
+                <input id="Email" type="email" required>
+            </div>
+            <div class="birthDate">
+                <label for="birthDate"> Geburtsdatum *</label>
+                <input id="birthDate" type="date" required>
+            </div>
+            <h5>Geschlecht</h5>
+            <div class="gender">
+                <label for="male"> Männlich</label>
+                <input id="male" type="radio" name="gender">
+                <label for="female"> Weiblich</label>
+                <input id="female" type="radio" name="gender">
+                <label for="divers"> Divers</label>
+                <input id="divers" type="radio" name="gender">
+            </div>
+            <div class="fileUpload">
+                <label for="fileUpload">Datei hochladen</label>
+                <input id="fileUpload" type="file" name="fileUpload">
+            </div>
+            <div class="quistion">
+                <label for="quistion">Ihre Frage</label>
+                <textarea id="quistion"></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Senden">
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+</html>
